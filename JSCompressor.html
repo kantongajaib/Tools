@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript Compressor</title>
+	</head>
+	<body>
+		<table border=0 colspan=2 cellspan=2>
+			<tr>
+				<td><script type="text/javascript" src="http://">
+</script>
+<b>Compress / Uncompress JavaScript</b>
+<form class="disabled" id="form" action="" method="post">
+<textarea id="input" name="input" rows="10" cols="80" disabled="disabled"></textarea>
+<br style="clear: both;" />
+<div style="display: inline;">
+	<button type="button" id="pack-script" disabled="disabled">Compress</button>
+</div>
+<div style="display: inline;text-align: right;">
+ <label for="base62">Base62 encode	<input type="checkbox" id="base62" name="base62" value="1" disabled="disabled"/></label>
+ <label for="shrink">Shrink variables   <input type="checkbox" id="shrink" name="shrink" value="1" disabled="disabled"/></label>
+</div>
+<br style="clear: both;" />
+<div>
+	<button type="button" id="beautify" onclick="return do_js_beautify()">Unpacked</button>
+  <select name="tabsize" id="tabsize">
+    <option value="1">indent with a tab character</option>
+    <option value="2" selected="selected">indent with 2 spaces</option>
+    <option value="3">indent with 3 spaces</option>
+    <option value="4">indent with 4 spaces</option>
+    <option value="8">indent with 8 spaces</option>
+  </select>
+  <input type="checkbox" id="preserve-newlines" checked="checked" /><label for="preserve-newlines"> Preserve empty lines?</label>
+  <input type="checkbox" id="detect-packers" checked="checked" /><label for="detect-packers"> Detect packers?</label>
+</div>
+<label class="copy">Output :</label><br />
+<textarea id="output" name="output" rows="10" cols="80" readonly="readonly" disabled="disabled" onclick="this.select();"></textarea>
+<br /><button type="button" id="clear-all" disabled="disabled">Clear</button>
+<fieldset style="display: none;">
+  <p id="message" class="error">disabled</p>
+  <p class="form-buttons" id="output-buttons">
+   <button type="submit" id="save-script" disabled="disabled">Save</button>
+   <button type="button" id="decode-script" disabled="disabled">Decode</button>
+  </p>
+  <input type="hidden" name="command" value=""/>
+	<input type="hidden" name="filename" value=""/>
+	<input type="hidden" name="filetype" value=""/>
+</fieldset>
+</form>
+		</table>
+	</body>
+</html>
